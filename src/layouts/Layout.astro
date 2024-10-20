@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -22,9 +22,44 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-black flex flex-col h-screen font-display">
+  <body
+    class="bg-white dark:bg-slate-950 text-black dark:text-white flex flex-col h-screen font-display"
+  >
     <div class="flex-1 flex justify-center items-center">
       <slot />
     </div>
+
+    <div class="absolute top-4 right-4">
+      <button id="theme-toggle" class="text-xl">🌙</button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        const htmlElement = document.documentElement;
+
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (savedTheme) {
+          htmlElement.classList.toggle("dark", savedTheme === "dark");
+          themeToggleBtn.innerText = savedTheme === "dark" ? "☀️" : "🌙";
+        } else if (prefersDark) {
+          htmlElement.classList.add("dark");
+          themeToggleBtn.innerText = "☀️";
+        } else {
+          themeToggleBtn.innerText = "🌙";
+        }
+
+        themeToggleBtn.addEventListener("click", () => {
+          const currentTheme = htmlElement.classList.contains("dark") ? "dark" : "light";
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+          htmlElement.classList.toggle("dark", newTheme === "dark");
+          localStorage.setItem("theme", newTheme);
+          themeToggleBtn.innerText = newTheme === "dark" ? "☀️" : "🌙";
+        });
+      });
+    </script>
   </body>
 </html>
