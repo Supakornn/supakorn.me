@@ -2,39 +2,153 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Supakorn">
-  <div class="flex flex-col sm:px-8 px-12">
-    <div class="justify-start sm:justify-center sm:flex">
-      <div class="text-black dark:text-white font-bold text-5xl mt-2">Hi there !👋</div>
-      <div class="text-black dark:text-white font-bold text-5xl mt-2">I'm Gap</div>
-    </div>
-    <div class="sm:justify-center text-black dark:text-white mt-3 font-semibold">
-      <p class="flex justify-center text-xl">
-        <!-- Full-St<span class="dark:text-red-400 text-red-500">(b)</span>ack<span
-          class="dark:text-red-400 text-red-500">(end)</span
-        >-Developer -->
-      </p>
-      <p class="flex justify-center text-xl">Studying at IT, Kmutt.</p>
-    </div>
-    <div
-      class="flex justify-start sm:justify-center text-black dark:text-white text-lg mt-3 font-semibold"
-    >
-      <p class="mr-2 dark:text-red-400 text-red-500">Find me on :</p>
-      <a class="mr-2" href="https://github.com/supakornn"><span class="underline">Github,</span></a>
-      <a class="mr-2" href="https://www.instagram.com/supakornigm"
-        ><span class="underline">Instagram, </span></a
-      >
-      <a class="mr-2" href="https://www.linkedin.com/in/supakornieamgomol/"
-        ><span class="underline">Linkedin</span></a
-      >
-    </div>
+<Layout title="Your Portfolio">
+  <div class="max-w-4xl">
+    <h1 class="text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+      👋 Welcome to My Portfolio
+    </h1>
+    <p class="text-lg text-slate-700 dark:text-slate-300 mb-8">
+      Hi, I'm A Fullstack Developer ✨ passionate about building innovative
+      solutions and cybersecurity 🔐
+    </p>
 
-    <div>
+    <div class="grid gap-6">
       <div
-        class="flex justify-start sm:justify-center bg-red-700 text-lg mt-3 font-semibold rounded-lg"
+        class="p-6 pl-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark transition-colors duration-200"
       >
-        <p class="text-white">New version is comming soon.</p>
+        <h2 class="text-xl font-semibold mb-4 dark:text-white">
+          🚀 Latest Projects
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400">
+          Check out some of my recent work and personal projects.
+        </p>
+        <a
+          href="/projects"
+          class="inline-block mt-4 text-primary hover:text-primary/80 transition-colors"
+          >View Projects →</a
+        >
+      </div>
+
+      <div
+        class="p-6 pl-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark transition-colors duration-200"
+      >
+        <h2 class="text-xl font-semibold mb-4 dark:text-white">
+          🛠️ My Tech Journey
+        </h2>
+        <ul class="grid grid-cols-3 gap-2 text-slate-600 dark:text-slate-400">
+          <!-- Frameworks -->
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+              alt="React"
+              class="w-5 h-5"
+            />
+            React.js
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg"
+              alt="React"
+              class="w-5 h-5"
+            />
+            Vue.js
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Next.js
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/svelte/svelte-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Svelte.js
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/astro/astro-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Astro.js
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Nest.js
+          </li>
+
+          <!-- languages -->
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            JavaScript
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            TypeScript
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original-wordmark.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Go
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Rust
+          </li>
+          <li class="flex items-center gap-2">
+            <img
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+              alt="Next"
+              class="w-5 h-5"
+            />
+            Python
+          </li>
+          <li class="flex items-center gap-2">
+            <a
+              href="/about"
+              class="text-primary hover:text-primary/80 transition-colors"
+              >More →</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+
+    gsap.from(".grid > div", {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power2.out",
+      delay: 0.5,
+    });
+  </script>
 </Layout>

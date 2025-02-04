@@ -1,4 +1,7 @@
 ---
+import Sidebar from "../components/Sidebar.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
 interface Props {
   title: string;
 }
@@ -7,59 +10,40 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Your Portfolio Description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap"
-      rel="stylesheet"
-    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body
-    class="bg-white dark:bg-slate-950 text-black dark:text-white flex flex-col h-screen font-display"
+    class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-white transition-colors duration-200"
   >
-    <div class="flex-1 flex justify-center items-center">
-      <slot />
+    <div class="flex min-h-screen">
+      <Sidebar />
+      <main class="flex-1 px-8 py-6 ml-80">
+        <div class="flex justify-end mb-6">
+          <ThemeToggle />
+        </div>
+        <slot />
+      </main>
     </div>
-
-    <div class="absolute top-4 right-4">
-      <button id="theme-toggle" class="text-xl">🌙</button>
-    </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggleBtn = document.getElementById("theme-toggle");
-        const htmlElement = document.documentElement;
-
-        const savedTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-        if (savedTheme) {
-          htmlElement.classList.toggle("dark", savedTheme === "dark");
-          themeToggleBtn.innerText = savedTheme === "dark" ? "☀️" : "🌙";
-        } else if (prefersDark) {
-          htmlElement.classList.add("dark");
-          themeToggleBtn.innerText = "☀️";
-        } else {
-          themeToggleBtn.innerText = "🌙";
-        }
-
-        themeToggleBtn.addEventListener("click", () => {
-          const currentTheme = htmlElement.classList.contains("dark") ? "dark" : "light";
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-          htmlElement.classList.toggle("dark", newTheme === "dark");
-          localStorage.setItem("theme", newTheme);
-          themeToggleBtn.innerText = newTheme === "dark" ? "☀️" : "🌙";
-        });
-      });
-    </script>
   </body>
 </html>
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.from("main", {
+    opacity: 0,
+    duration: 1,
+    y: 20,
+    ease: "power2.out"
+  });
+
+  const theme = localStorage.getItem("theme") ?? "light";
+  document.documentElement.classList.toggle("dark", theme === "dark");
+</script>

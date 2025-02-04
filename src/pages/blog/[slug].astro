@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    // {
+    //   params: { slug: "Nothing now" },
+    //   props: {
+    //     title: "",
+    //     date: "2024-01-15",
+    //     content: `
+    //     `
+    //   }
+    // }
+  ];
+}
+
+const { title, date, content } = Astro.props;
+---
+
+<Layout title={title}>
+  <article class="max-w-3xl mx-auto prose dark:prose-invert prose-primary">
+    <h1 class="text-4xl font-bold mb-4">{title}</h1>
+    <time class="text-sm text-slate-500 dark:text-slate-400 mb-8 block"
+      >{date}</time
+    >
+    <div set:html={content} />
+  </article>
+</Layout>
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.from("article", {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+  });
+</script>
