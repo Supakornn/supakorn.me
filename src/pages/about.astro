@@ -1,4 +1,5 @@
 ---
+import ThemeToggle from "../components/ThemeToggle.astro";
 import Layout from "../layouts/Layout.astro";
 
 const currentYear = new Date().getFullYear();
@@ -450,171 +451,142 @@ const studentYear = yearSuffix(academicYear);
 
           <div class="skill-category">
             <h3 class="text-lg font-medium mb-2 text-primary">Tools</h3>
-            <ul class="space-y-2 text-slate-700 dark:text-slate-300"></ul>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Git
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Vite.js
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Yarn
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pnpm/pnpm-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Pnpm
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Vercel
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Netlify
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cloudflare/cloudflare-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Cloudflare
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Azure
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Docker
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Postman
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/insomnia/insomnia-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Insomnia
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Figma
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              VS Code
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://static.cdnlogo.com/logos/c/23/cursor.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              Cursor
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/xcode/xcode-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              XCode
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/neovim/neovim-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              NeoVim
-            </li>
-            <li class="flex items-center gap-2">
-              <img
-                src="https://raw.githubusercontent.com/devicons/devicon/master/icons/datagrip/datagrip-original.svg"
-                alt="Next"
-                class="w-5 h-5"
-              />
-              DataGrip
-            </li>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="text-lg font-medium mb-2 text-primary">Pentest</h3>
             <ul class="space-y-2 text-slate-700 dark:text-slate-300">
               <li class="flex items-center gap-2">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSySOjAvHDb2t1k2wM-sgiKW-HHSoeI5-qqyQ&s"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
                   alt="Next"
                   class="w-5 h-5"
                 />
-                BurpSuite
+                Git
               </li>
               <li class="flex items-center gap-2">
                 <img
-                  src="https://static-00.iconduck.com/assets.00/wireshark-alt-icon-256x256-t5yf48hw.png"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg"
                   alt="Next"
                   class="w-5 h-5"
                 />
-                Wireshark
+                Vite.js
               </li>
               <li class="flex items-center gap-2">
                 <img
-                  src="https://avatars.githubusercontent.com/u/40727946?v=4"
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg"
                   alt="Next"
                   class="w-5 h-5"
                 />
-                Proxyman
+                Yarn
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pnpm/pnpm-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Pnpm
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Vercel
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Netlify
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cloudflare/cloudflare-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Cloudflare
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Azure
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Docker
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Postman
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/insomnia/insomnia-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Insomnia
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Figma
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                VS Code
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://static.cdnlogo.com/logos/c/23/cursor.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                Cursor
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/xcode/xcode-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                XCode
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/neovim/neovim-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                NeoVim
+              </li>
+              <li class="flex items-center gap-2">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/datagrip/datagrip-original.svg"
+                  alt="Next"
+                  class="w-5 h-5"
+                />
+                DataGrip
               </li>
             </ul>
           </div>
@@ -623,6 +595,13 @@ const studentYear = yearSuffix(academicYear);
     </div>
   </div>
 
+  <style>
+    @media (max-width: 640px) {
+      .max-w-4xl {
+        max-width: 100%;
+      }
+    }
+  </style>
   <script>
     import { gsap } from "gsap";
 

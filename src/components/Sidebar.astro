@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
+
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -10,7 +12,7 @@ const navigation = [
 <div class="sidebar-container">
   <aside
     id="sidebar"
-    class="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-dark-lighter border-r border-slate-200 dark:border-dark-card px-6 py-8 lg:translate-x-0 -translate-x-full"
+    class="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-dark-lighter border-r border-slate-200 dark:border-dark-card px-6 py-8 lg:translate-x-0 -translate-x-full flex flex-col"
   >
     <div class="mb-8">
       <h1 class="text-2xl font-bold text-primary">Supakornn</h1>
@@ -37,22 +39,25 @@ const navigation = [
     </nav>
   </aside>
 
-  <button
-    id="sidebar-toggle"
-    class="fixed left-4 bottom-4 p-2 bg-primary text-black rounded-full shadow-lg hover:bg-primary/90 z-50"
-    aria-label="Toggle Sidebar"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
+  <div class="fixed left-4 bottom-4 flex flex-col items-center gap-2 z-50">
+    <ThemeToggle />
+    <button
+      id="sidebar-toggle"
+      class="p-2 bg-primary text-black rounded-full shadow-lg hover:bg-primary/90"
+      aria-label="Toggle Sidebar"
     >
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"
-      ></path>
-    </svg>
-  </button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
 </div>
 
 <script>
