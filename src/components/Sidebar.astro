@@ -66,7 +66,7 @@ const navigation = [
       sidebar?.style.setProperty("transform", isHidden ? "translateX(-100%)" : "translateX(0)");
       document.documentElement.classList.toggle("sidebar-hidden", isHidden);
     } else {
-      sidebar?.style.setProperty("transform", "translateX(-100%)");
+      sidebar?.style.setProperty("transform", isHidden ? "translateX(0)" : "translateX(-100%)");
       document.documentElement.classList.add("sidebar-hidden");
     }
     toggleIcon?.style.setProperty("transform", isHidden ? "rotate(180deg)" : "rotate(0)");
@@ -79,11 +79,11 @@ const navigation = [
     if (window.innerWidth >= 1024) {
       isHidden = !isHidden;
       localStorage.setItem("sidebarHidden", isHidden.toString());
+      updateSidebar();
     } else {
-      const currentTransform = sidebar?.style.getPropertyValue("transform");
-      const shouldHide = currentTransform === "translateX(0px)";
-      sidebar?.style.setProperty("transform", shouldHide ? "translateX(-100%)" : "translateX(0)");
-      document.documentElement.classList.toggle("sidebar-hidden", shouldHide);
+      isHidden = !isHidden;
+      sidebar?.style.setProperty("transform", isHidden ? "translateX(-100%)" : "translateX(0)");
+      document.documentElement.classList.toggle("sidebar-hidden", isHidden);
     }
     updateSidebar();
   });
