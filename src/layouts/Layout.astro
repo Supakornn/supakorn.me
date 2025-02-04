@@ -53,7 +53,8 @@ const { title } = Astro.props;
 
 <script>
   if (!localStorage.getItem("theme")) {
-    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "dark");
+    document.documentElement.classList.add("dark");
   } else {
     const theme = localStorage.getItem("theme");
     document.documentElement.classList.toggle("dark", theme === "dark");
