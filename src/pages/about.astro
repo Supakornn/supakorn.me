@@ -25,12 +25,12 @@ const studentYear = yearSuffix(academicYear);
     <h1 class="text-4xl font-bold mb-6 text-slate-900 dark:text-white">👨‍💻 About Me</h1>
 
     <div class="grid gap-8">
-      <!-- About Me Section -->
+      <!-- About Me Section  --->
       <div
         class="p-6 px-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark"
       >
         <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">🎯 Who I Am</h2>
-        <p class="text-slate-700 dark:text-slate-300 mb-4">
+        <p class="text-lg text-slate-700 dark:text-slate-300 mb-4">
           Hi, I'm <span class="text-primary">👨🏻‍💻 Supakorn Ieamgomol</span>, a {studentYear} year student
           in the Faculty of <span class="text-primary">Information Technology 🪑 (SIT) </span>
           at King Mongkut's University of Technology Thonburi <span class="text-primary"
@@ -68,11 +68,12 @@ const studentYear = yearSuffix(academicYear);
         </div>
       </div>
 
+      <!-- Find Me On - Updated text sizes -->
       <div
         class="p-6 px-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark"
       >
         <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">💌 Find Me On</h2>
-        <div class="mt-4 flex space-x-4">
+        <div class="mt-4 flex flex-wrap gap-4">
           <a
             href="https://github.com/supakornn"
             target="_blank"
@@ -135,25 +136,17 @@ const studentYear = yearSuffix(academicYear);
         </div>
       </div>
 
-      <!-- Skills Section -->
+      <!-- Skills Section - Updated text sizes -->
       <div
-        class="p-6
-            px-10
-            bg-white
-            dark:bg-dark-card
-            rounded-lg
-            shadow-sm
-            border
-            border-slate-200
-            dark:border-dark"
+        class="p-6 px-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark"
       >
         <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">
           🛠️ My Tech Journey
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div class="skill-category">
-            <h3 class="text-lg font-medium mb-2 text-primary">Frontend</h3>
-            <ul class="space-y-2 text-slate-700 dark:text-slate-300">
+            <h3 class="text-xl font-medium mb-3 text-primary">Frontend</h3>
+            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
               <!-- lang -->
               <li class="flex items-center gap-2">
                 <img
@@ -267,8 +260,8 @@ const studentYear = yearSuffix(academicYear);
           </div>
 
           <div class="skill-category">
-            <h3 class="text-lg font-medium mb-2 text-primary">Backend</h3>
-            <ul class="space-y-2 text-slate-700 dark:text-slate-300">
+            <h3 class="text-xl font-medium mb-3 text-primary">Backend</h3>
+            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
               <!-- lang -->
               <li class="flex items-center gap-2">
                 <img
@@ -383,8 +376,8 @@ const studentYear = yearSuffix(academicYear);
           </div>
 
           <div class="skill-category">
-            <h3 class="text-lg font-medium mb-2 text-primary">Database</h3>
-            <ul class="space-y-2 text-slate-700 dark:text-slate-300">
+            <h3 class="text-xl font-medium mb-3 text-primary">Database</h3>
+            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
               <li class="flex items-center gap-2">
                 <img
                   src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
@@ -450,8 +443,8 @@ const studentYear = yearSuffix(academicYear);
           </div>
 
           <div class="skill-category">
-            <h3 class="text-lg font-medium mb-2 text-primary">Tools</h3>
-            <ul class="space-y-2 text-slate-700 dark:text-slate-300">
+            <h3 class="text-xl font-medium mb-3 text-primary">Tools</h3>
+            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
               <li class="flex items-center gap-2">
                 <img
                   src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
@@ -596,9 +589,35 @@ const studentYear = yearSuffix(academicYear);
   </div>
 
   <style>
+    /* Updated responsive styles */
     @media (max-width: 640px) {
       .max-w-4xl {
         max-width: 100%;
+        padding: 0 1rem;
+      }
+
+      .grid {
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        padding: 0.5rem;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .text-2xl {
+        font-size: 1.5rem;
+      }
+
+      .text-xl {
+        font-size: 1.25rem;
+      }
+
+      .text-base {
+        font-size: 1rem;
       }
     }
   </style>
