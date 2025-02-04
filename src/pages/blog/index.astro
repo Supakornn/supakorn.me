@@ -13,7 +13,7 @@ const posts = [
 ---
 
 <Layout title="Blog">
-  <div class="max-w-4xl">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="text-4xl font-bold mb-6 text-slate-900 dark:text-white">Blog</h1>
 
     <div class="grid gap-6">
@@ -27,17 +27,11 @@ const posts = [
               <h2 class="text-xl font-semibold text-slate-900 dark:text-white hover:text-primary transition-colors">
                 {post.title}
               </h2>
-              <span class="text-sm text-slate-500 dark:text-slate-400">
-                {post.readTime}
-              </span>
+              <span class="text-sm text-slate-500 dark:text-slate-400">{post.readTime}</span>
             </div>
-            <p class="text-slate-700 dark:text-slate-300 mb-4">
-              {post.excerpt}
-            </p>
+            <p class="text-slate-700 dark:text-slate-300 mb-4">{post.excerpt}</p>
             <div class="flex justify-between items-center">
-              <time class="text-sm text-slate-500 dark:text-slate-400">
-                {post.date}
-              </time>
+              <time class="text-sm text-slate-500 dark:text-slate-400">{post.date}</time>
               <span class="text-primary">Read more →</span>
             </div>
           </a>
@@ -55,6 +49,6 @@ const posts = [
     opacity: 0,
     duration: 0.8,
     stagger: 0.2,
-    ease: "power2.out",
+    ease: "power2.out"
   });
 </script>
