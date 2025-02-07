@@ -5,6 +5,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
+  { name: "Certificates", href: "/cert" }
   //   { name: "Blog", href: "/blog" }
 ];
 ---
@@ -16,9 +17,7 @@ const navigation = [
   >
     <div class="mb-8">
       <h1 class="text-2xl font-bold text-primary">Supakornn</h1>
-      <p class="text-sm text-slate-600 dark:text-slate-400">
-        Developer | Hacker
-      </p>
+      <p class="text-sm text-slate-600 dark:text-slate-400">Developer | Hacker</p>
     </div>
 
     <nav>
@@ -55,11 +54,8 @@ const navigation = [
         viewBox="0 0 24 24"
         stroke="currentColor"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M15 19l-7-7 7-7"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"
+        ></path>
       </svg>
     </button>
   </div>
@@ -73,22 +69,13 @@ const navigation = [
 
   function updateSidebar() {
     if (window.innerWidth >= 1024) {
-      sidebar?.style.setProperty(
-        "transform",
-        isHidden ? "translateX(-100%)" : "translateX(0)",
-      );
+      sidebar?.style.setProperty("transform", isHidden ? "translateX(-100%)" : "translateX(0)");
       document.documentElement.classList.toggle("sidebar-hidden", isHidden);
     } else {
-      sidebar?.style.setProperty(
-        "transform",
-        isHidden ? "translateX(0)" : "translateX(-100%)",
-      );
+      sidebar?.style.setProperty("transform", isHidden ? "translateX(0)" : "translateX(-100%)");
       document.documentElement.classList.add("sidebar-hidden");
     }
-    toggleIcon?.style.setProperty(
-      "transform",
-      isHidden ? "rotate(180deg)" : "rotate(0)",
-    );
+    toggleIcon?.style.setProperty("transform", isHidden ? "rotate(180deg)" : "rotate(0)");
   }
 
   updateSidebar();
@@ -101,10 +88,7 @@ const navigation = [
       updateSidebar();
     } else {
       isHidden = !isHidden;
-      sidebar?.style.setProperty(
-        "transform",
-        isHidden ? "translateX(-100%)" : "translateX(0)",
-      );
+      sidebar?.style.setProperty("transform", isHidden ? "translateX(-100%)" : "translateX(0)");
       document.documentElement.classList.toggle("sidebar-hidden", isHidden);
     }
     updateSidebar();
