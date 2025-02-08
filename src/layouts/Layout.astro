@@ -18,6 +18,14 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem("theme") ?? "dark";
+        document.documentElement.classList[theme === "dark" ? "add" : "remove"]("dark");
+      })();
+    </script>
+
     <style is:inline>
       :root {
         --animation-duration: 0.4s;
@@ -64,14 +72,6 @@ const { title } = Astro.props;
 </style>
 
 <script>
-  if (!localStorage.getItem("theme")) {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.classList.add("dark");
-  } else {
-    const theme = localStorage.getItem("theme");
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }
-
   window.addEventListener("load", () => {
     document.body.classList.add("loaded");
   });
