@@ -1,5 +1,6 @@
 ---
 import Sidebar from "../components/Sidebar.astro";
+import Loading from "../components/ui/Loading.astro";
 
 interface Props {
   title: string;
@@ -40,6 +41,7 @@ const { title } = Astro.props;
     </style>
   </head>
   <body class="bg-slate-50 text-slate-900 dark:bg-dark dark:text-white">
+    <Loading class="loading-screen" />
     <div class="flex min-h-screen">
       <Sidebar />
       <main class="flex-1 px-4 py-6 lg:pl-[280px] w-full">
@@ -51,6 +53,16 @@ const { title } = Astro.props;
   </body>
 </html>
 
+<style is:global>
+  body {
+    overflow: hidden;
+  }
+
+  body.loaded {
+    overflow: auto;
+  }
+</style>
+
 <script>
   if (!localStorage.getItem("theme")) {
     localStorage.setItem("theme", "dark");
@@ -59,4 +71,8 @@ const { title } = Astro.props;
     const theme = localStorage.getItem("theme");
     document.documentElement.classList.toggle("dark", theme === "dark");
   }
+
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
 </script>
