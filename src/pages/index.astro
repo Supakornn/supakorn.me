@@ -1,5 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { skillCategories } from "../data/skills";
+
+// Get core and frontend skills for homepage preview
+const previewSkills = [
+  ...(skillCategories.find((cat) => cat.title === "Core")?.skills.slice(0, 4) || []),
+  ...(skillCategories.find((cat) => cat.title === "Frontend")?.skills.slice(0, 4) || []),
+  ...(skillCategories.find((cat) => cat.title === "Backend")?.skills.slice(2, 5) || [])
+];
 ---
 
 <Layout title="Supakorn">
@@ -32,119 +40,25 @@ import Layout from "../layouts/Layout.astro";
       >
         <h2 class="text-xl font-semibold mb-4 dark:text-white">🛠️ My Tech Journey</h2>
         <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-slate-600 dark:text-slate-400">
-          <!-- Frameworks -->
+          {
+            previewSkills.map((skill) => (
+              <li class="flex items-center gap-2">
+                {skill.darkIcon ? (
+                  <>
+                    <img src={skill.icon} class="w-5 h-5 block dark:hidden" />
+                    <img src={skill.darkIcon} class="w-5 h-5 hidden dark:block" />
+                  </>
+                ) : (
+                  <img src={skill.icon} class="w-5 h-5" />
+                )}
+                {skill.name}
+              </li>
+            ))
+          }
           <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-              alt="React"
-              class="w-5 h-5"
-            />
-            React.js
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg"
-              alt="React"
-              class="w-5 h-5"
-            />
-            Vue.js
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Next.js
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/svelte/svelte-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Svelte.js
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/astro/astro-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Astro.js
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Nest.js
-          </li>
-
-          <!-- languages -->
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            JavaScript
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            TypeScript
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original-wordmark.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Go
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Rust
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Python
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastify/fastify-original.svg"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Fastfiy
-          </li>
-          <li class="flex items-center gap-2">
-            <img src="https://docs.gofiber.io/img/logo-dark.svg" alt="Next" class="w-5 h-5" />
-            Fiber
-          </li>
-          <li class="flex items-center gap-2">
-            <img
-              src="https://avatars.githubusercontent.com/u/2624634?s=400&v=4"
-              alt="Next"
-              class="w-5 h-5"
-            />
-            Echo
-          </li>
-          <li class="flex items-center gap-2">
-            <a href="/about" class="text-primary hover:text-primary/80 transition-colors">More →</a>
+            <a href="/about" class="text-primary hover:text-primary/80 transition-colors">
+              More →
+            </a>
           </li>
         </ul>
       </div>

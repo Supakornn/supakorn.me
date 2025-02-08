@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SkillCard from "../components/SkillCard.astro";
+import { skillCategories } from "../data/skills";
 
 const currentYear = new Date().getFullYear();
 const currentMonth = new Date().getMonth();
-const academicYear =
-  currentMonth >= 5 ? currentYear - 2024 + 1 : currentYear - 2024;
+const academicYear = currentMonth >= 5 ? currentYear - 2024 + 1 : currentYear - 2024;
 const yearSuffix = (year) => {
   switch (year) {
     case 1:
@@ -22,30 +23,23 @@ const studentYear = yearSuffix(academicYear);
 
 <Layout title="About Me">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-4xl font-bold mb-6 text-slate-900 dark:text-white">
-      👨‍💻 About Me
-    </h1>
+    <h1 class="text-4xl font-bold mb-6 text-slate-900 dark:text-white">👨‍💻 About Me</h1>
 
     <div class="grid gap-8">
       <!-- About Me Section  --->
       <div
         class="p-6 px-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark"
       >
-        <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">
-          🎯 Who I Am
-        </h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">🎯 Who I Am</h2>
         <p class="text-lg text-slate-700 dark:text-slate-300 mb-4">
-          Hi, I'm <span class="text-primary">👨🏻‍💻 Supakorn Ieamgomol</span>, a {
-            studentYear
-          } year student in the Faculty of <span class="text-primary"
-            >Information Technology 🪑 (SIT)
-          </span>
-          at King Mongkut's University of Technology Thonburi <span
-            class="text-primary">(KMUTT)</span
-          >🎓. I'm a <span class="text-primary">Software Developer</span> 🤹 with
-          a strong passion for building innovative solutions and a deep interest
-          in <span class="text-primary">cybersecurity</span> 🔐. I enjoy tackling
-          complex problems, learning new technologies, and continuously improving
+          Hi, I'm <span class="text-primary">👨🏻‍💻 Supakorn Ieamgomol</span>, a {studentYear} year student
+          in the Faculty of <span class="text-primary">Information Technology 🪑 (SIT) </span>
+          at King Mongkut's University of Technology Thonburi <span class="text-primary"
+            >(KMUTT)</span
+          >🎓. I'm a <span class="text-primary">Software Developer</span> 🤹 with a strong passion for
+          building innovative solutions and a deep interest in <span class="text-primary"
+            >cybersecurity</span
+          > 🔐. I enjoy tackling complex problems, learning new technologies, and continuously improving
           my skills to create secure and efficient software.
         </p>
         <div class="mt-4">
@@ -68,8 +62,7 @@ const studentYear = yearSuffix(academicYear);
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              ></path>
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
             </svg>
             Download CV
           </a>
@@ -80,9 +73,7 @@ const studentYear = yearSuffix(academicYear);
       <div
         class="p-6 px-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark"
       >
-        <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">
-          💌 Find Me On
-        </h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">💌 Find Me On</h2>
         <div class="mt-4 flex flex-wrap gap-4">
           <a
             href="https://github.com/supakornn"
@@ -146,7 +137,7 @@ const studentYear = yearSuffix(academicYear);
         </div>
       </div>
 
-      <!-- Skills Section - Updated text sizes -->
+      <!-- Skills Section -->
       <div
         class="p-6 px-10 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark"
       >
@@ -154,436 +145,7 @@ const studentYear = yearSuffix(academicYear);
           🛠️ My Tech Journey
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- Frontend -->
-          <div class="skill-category">
-            <h3 class="text-xl font-medium mb-3 text-primary">Frontend</h3>
-            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
-              <!-- lang -->
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
-                  class="w-5 h-5"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"
-                  class="w-5 h-5"
-                />
-                HTML, CSS
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
-                  class="w-5 h-5"
-                />
-                sass
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                  class="w-5 h-5"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-                  class="w-5 h-5"
-                />
-                JavaScript, TypeScript
-              </li>
-
-              <!-- framework -->
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg"
-                  class="w-5 h-5"
-                />
-                Bootstrap
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
-                  class="w-5 h-5"
-                />
-                Tailwind CSS
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/materialui/materialui-original.svg"
-                  class="w-5 h-5"
-                />
-                Material UI
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg"
-                  class="w-5 h-5"
-                />
-                Vite.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-                  class="w-5 h-5"
-                />
-                React.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg"
-                  class="w-5 h-5"
-                />
-                Vue.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg"
-                  class="w-5 h-5"
-                />
-                Next.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/svelte/svelte-original.svg"
-                  class="w-5 h-5"
-                />
-                Svelte.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/astro/astro-original.svg"
-                  class="w-5 h-5"
-                />
-                Astro.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-                  class="w-5 h-5"
-                />
-                React Native
-              </li>
-            </ul>
-          </div>
-
-          <!-- Backend -->
-          <div class="skill-category">
-            <h3 class="text-xl font-medium mb-3 text-primary">Backend</h3>
-            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
-              <!-- lang -->
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                  class="w-5 h-5"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-                  class="w-5 h-5"
-                />
-                JavaScript, TypeScript
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original-wordmark.svg"
-                  class="w-5 h-5"
-                />
-                Go
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-original.svg"
-                  class="w-5 h-5"
-                />
-                Rust
-              </li>
-
-              <!-- framework -->
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
-                  class="w-5 h-5"
-                />
-                Express.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-original.svg"
-                  class="w-5 h-5"
-                />
-                Nest.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/fastify/fastify-original.svg"
-                  class="w-5 h-5"
-                />
-                Fastify.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://gofiber.io/assets/images/logo.svg"
-                  class="w-5 h-5 block dark:hidden"
-                />
-                <img
-                  src="https://docs.gofiber.io/img/logo-dark.svg"
-                  class="w-5 h-5 hidden dark:block"
-                />
-                Fiber
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://avatars.githubusercontent.com/u/2624634?s=400&v=4"
-                  class="w-5 h-5"
-                />
-                Echo
-              </li>
-
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sanity/sanity-original.svg"
-                  class="w-5 h-5"
-                />
-                Sanity
-              </li>
-            </ul>
-          </div>
-
-          <!-- Database -->
-          <div class="skill-category">
-            <h3 class="text-xl font-medium mb-3 text-primary">Database</h3>
-            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/datagrip/datagrip-original.svg"
-                  class="w-5 h-5"
-                />
-                DataGrip
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
-                  class="w-5 h-5"
-                />
-                MongoDB
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg"
-                  class="w-5 h-5"
-                />
-                PostgreSQL
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
-                  class="w-5 h-5"
-                />
-                MySQL
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-original.svg"
-                  class="w-5 h-5"
-                />
-                Firebase
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg"
-                  class="w-5 h-5"
-                />
-                Redis
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/prisma/prisma-original.svg"
-                  class="w-5 h-5"
-                />
-                Prisma
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://gorm.io/gorm.svg"
-                  alt="Next"
-                  class="w-5 h-5"
-                />
-                Gorm
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sequelize/sequelize-original.svg"
-                  class="w-5 h-5"
-                />
-                Sequelize
-              </li>
-            </ul>
-          </div>
-
-          <!-- AI/ML -->
-          <div class="skill-category">
-            <h3 class="text-xl font-medium mb-3 text-primary">AI/ML</h3>
-            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-                  class="w-5 h-5"
-                />
-                Python
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg"
-                  class="w-5 h-5"
-                />
-                Pytorch
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg"
-                  class="w-5 h-5"
-                />
-                OpenCV
-              </li>
-            </ul>
-          </div>
-
-          <!-- DevOps -->
-          <div class="skill-category">
-            <h3 class="text-xl font-medium mb-3 text-primary">DevOps</h3>
-            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"
-                  class="w-5 h-5"
-                />
-                Git
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
-                  class="w-5 h-5"
-                />
-                GitHub
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg"
-                  class="w-5 h-5"
-                />
-                GitLab
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
-                  class="w-5 h-5"
-                />
-                Docker
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg"
-                  class="w-5 h-5"
-                />
-                Vercel
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg"
-                  class="w-5 h-5"
-                />
-                Netlify
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cloudflare/cloudflare-original.svg"
-                  class="w-5 h-5"
-                />
-                Cloudflare
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg"
-                  class="w-5 h-5"
-                />
-                Azure
-              </li>
-            </ul>
-          </div>
-
-          <!-- Tools -->
-          <div class="skill-category">
-            <h3 class="text-xl font-medium mb-3 text-primary">Tools</h3>
-            <ul class="space-y-3 text-base text-slate-700 dark:text-slate-300">
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-                  class="w-5 h-5"
-                />
-                Node.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bun/bun-original.svg"
-                  class="w-5 h-5"
-                />
-                Bun.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg"
-                  class="w-5 h-5"
-                />
-                Yarn.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pnpm/pnpm-original.svg"
-                  class="w-5 h-5"
-                />
-                Pnpm.js
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg"
-                  class="w-5 h-5"
-                />
-                Figma
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg"
-                  class="w-5 h-5"
-                />
-                Postman
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/insomnia/insomnia-original.svg"
-                  class="w-5 h-5"
-                />
-                Insomnia
-              </li>
-
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg"
-                  class="w-5 h-5"
-                />
-                VS Code
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/xcode/xcode-original.svg"
-                  class="w-5 h-5"
-                />
-                XCode
-              </li>
-              <li class="flex items-center gap-2">
-                <img
-                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/neovim/neovim-original.svg"
-                  class="w-5 h-5"
-                />
-                NeoVim
-              </li>
-            </ul>
-          </div>
+          {skillCategories.map((category) => <SkillCard category={category} />)}
         </div>
       </div>
     </div>
@@ -631,7 +193,7 @@ const studentYear = yearSuffix(academicYear);
       duration: 0.4,
       stagger: 0.1,
       ease: "power2.out",
-      delay: 0.1,
+      delay: 0.1
     });
   </script>
 </Layout>

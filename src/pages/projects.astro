@@ -1,32 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const projects = [
-  {
-    title: "Thai Bad Words",
-    description: "A library for detecting inappropriate Thai words in text content.",
-    tags: ["TypeScript", "Library"],
-    image: "/img/projects/thai-bad-words.png",
-    link: "https://www.npmjs.com/package/@sit-sandbox/thai-bad-words",
-    repo: "https://github.com/SIT-SandBox/thai-bad-words"
-  },
-  {
-    title: "SYN Flood",
-    description: "Basic SYN-Flood attack in go.",
-    tags: ["Golang", "DDos", "Network"],
-    image: "/img/projects/sys-flood.png",
-    link: "",
-    repo: "https://github.com/Supakornn/syn-flood"
-  },
-  {
-    title: "Reverse Shell Generator",
-    description: "A CLI reverse shell generator.",
-    tags: ["Golang", "Hacking"],
-    image: "/img/projects/reverse-shell.jpg",
-    link: "",
-    repo: "https://github.com/Supakornn/reverse-shell-gen"
-  }
-];
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
 ---
 
 <Layout title="Projects">
@@ -34,86 +9,14 @@ const projects = [
     <h1 class="text-4xl font-bold mb-6 text-slate-900 dark:text-white animate-title">Projects</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {
-        projects.map((project, index) => (
-          <div
-            class="project-card block p-4 bg-white dark:bg-dark-card rounded-lg shadow-sm border border-slate-200 dark:border-dark hover:border-primary dark:hover:border-primary transition-colors"
-            style={`animation-delay: ${index * 0.2}s`}
-          >
-            <div class="relative mb-4 overflow-hidden rounded-md">
-              <img
-                src={project.image}
-                alt={project.title}
-                class="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <h2 class="text-xl font-semibold mb-2 text-slate-900 dark:text-white hover:text-primary transition-colors">
-              {project.title}
-            </h2>
-            <p class="text-slate-700 dark:text-slate-300 mb-4">{project.description}</p>
-            <div class="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span class="px-2 py-1 text-sm bg-slate-100 dark:bg-dark-lighter text-slate-700 dark:text-slate-300 rounded">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div class="mt-4 flex justify-between items-center gap-4">
-              {project.repo ? (
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center gap-2 bg-primary text-black hover:bg-primary/90 dark:bg-primary dark:hover:bg-primary/90 rounded-md px-3 py-2 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                  <span class="font-medium">Source</span>
-                </a>
-              ) : null}
-
-              {project.link ? (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center gap-2 bg-primary/90 text-black hover:bg-primary/100 dark:bg-primary dark:hover:bg-primary/100 rounded-md px-3 py-2 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 15.889v-2.223s-3.78-.114-7 3.333c1.513-6.587 7-7.778 7-7.778v-2.221l5 4.425-5 4.464z" />
-                  </svg>
-                  <span class="font-medium">Visit</span>
-                </a>
-              ) : null}
-            </div>
-          </div>
-        ))
-      }
+      {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
     </div>
   </div>
 </Layout>
 
 <style>
   .animate-title {
-    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .project-card {
-    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
-    animation-delay: calc(var(--index, 0) * 0.1s);
+    animation: slideDown 0.3s ease-out forwards;
   }
 
   @keyframes slideDown {
@@ -121,10 +24,11 @@ const projects = [
       opacity: 0;
       transform: translateY(-10px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  }
+
+  :global(.project-card) {
+    animation: slideUp 0.3s ease-out backwards;
+    animation-delay: calc(var(--index) * 0.1s);
   }
 
   @keyframes slideUp {
@@ -132,15 +36,5 @@ const projects = [
       opacity: 0;
       transform: translateY(10px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 </style>
-
-<script>
-  document.querySelectorAll(".project-card").forEach((card, index) => {
-    card.style.setProperty("--index", index.toString());
-  });
-</script>
