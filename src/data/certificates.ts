@@ -28,6 +28,6 @@ export const certificates: Certificate[] = [
   {
     title: "DevLab 4",
     from: "BornToDev",
-    image: "/public/img/certificates/devlab.png"
+    image: "/img/certificates/devlab.png"
   }
 ];
