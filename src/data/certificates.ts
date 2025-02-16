@@ -24,5 +24,10 @@ export const certificates: Certificate[] = [
     title: "Rest API (Intermediate)",
     from: "HackerRank",
     image: "/img/certificates/rest-api-inter.png",
+  },
+  {
+    title: "DevLab 4",
+    from: "BornToDev",
+    image: "/public/img/certificates/DevLab 4 Verified Certificate.png"
   }
 ];
